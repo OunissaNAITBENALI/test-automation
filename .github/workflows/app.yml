@@ -1,0 +1,15 @@
+name: commit workflow
+run-name: Executing every commit required actions (tests, static analysis)
+on: [push]
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/chekout@v4
+      - name: Set up Python
+
+        uses: actions/setup-python@v4
+        with:
+           python-version: '3.12'
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"

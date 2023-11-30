@@ -67,12 +67,11 @@ def test_list_books_authors_no_lastname(monkeypatch):
         return [{'id': 'aaa-001', 'name': 'Origine', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
             {'id': 'aaa-002', 'name': 'Anges & Démons', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
         ]
-
     monkeypatch.setattr(BookFetcherService, 'get_books', mock_get_list_books_authors_no_lastname)
     book_service = BookService(book_fetcher_service=BookFetcherService())
     authors = book_service.list_books_authors()
 
-    assert authors == ['Brown', '']
+    assert authors == ['Brown Dan']
 
     #assert collection.Counter(authors) == collections.Counter(['Brown Dan', 'Boy Danny'])
 
@@ -80,34 +79,13 @@ def test_list_books_authors_no_lastname(monkeypatch):
 
 
 
-
-
-
-
-
-
-
-
      #books = self.book_fetcher_service.get_books()
-    #return list(set(map(lambda book: book['Brown']['lastname'] + ' ' + book['Dan']['firstname'], books)))
 
 
 
-"""def test_list_books(monkeypatch):
-    def mock_get_books(*args):
-        return [
-            {'id': 'aaa-001', 'name': 'Origine', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
-            {'id': 'aaa-002', 'name': 'Anges & Démons', 'author': {'firstname': 'Dan', 'lastname': 'Brown'}},
-        ]
 
-    monkeypatch.setattr(BookFetcherService, 'get_books', mock_get_books)
 
-    authors_service = authorsService(book_fetcher_service=BookFetcherService())
-    authors = authors_service.list_authors_ids()
 
-    assert ids == ['firstname', 'lastname']
-    assert ids == ['Dan', 'Brown']
-"""
 
 
 

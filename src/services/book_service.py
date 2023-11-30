@@ -11,7 +11,4 @@ class BookService:
         return list(set(map(lambda book: book['author']['lastname'] + ' ' + book['author']['firstname'], books)))
 
 
-    """def test_list_books_ids_no_books(self):
-        books = self.book_fetcher_service.get_books()
-        book_service = BookService(mock_fetcher_service)
-        return list('')"""
+
