@@ -17,11 +17,15 @@ jobs:
       - name: Install dependencies
         run: pip install --no-cache-dir -r requirements.txt
 
+      - name: Install Ruff
+        run: |
+          pip install ruff  
+
       - name: Execute unit tests
         run: pytest
 
       - name: Lint with Ruff
         run: |
-          ruff --output-format=github .
+          ruff . --output-format=github   
 
         #pip install -r requirements.txt
