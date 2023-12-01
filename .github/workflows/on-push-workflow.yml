@@ -20,8 +20,8 @@ jobs:
       - name: Execute unit tests
         run: pytest
 
-      """- name: Lint with Ruff
+      - name: Lint with Ruff
         run: |
-          ruff --output-format=github
-            """
+          ruff --output-format=github .
+
         #pip install -r requirements.txt
