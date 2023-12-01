@@ -14,4 +14,4 @@ def test_uppercase_with_no_str():
 
 
 def test_uppercase_with_not_str():
-    assert to_uppercase(2) == 4
+    assert to_uppercase(2) == 2
