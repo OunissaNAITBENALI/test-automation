@@ -13,6 +13,5 @@ def test_uppercase_with_no_str():
     assert to_uppercase('') == ''
 
 
-"""def test_uppercase_with_not_str():
-    assert to_uppercase(2) == 2
-"""
+def test_uppercase_with_not_str():
+    assert to_uppercase(2) == 4
